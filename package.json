@@ -7,6 +7,13 @@
   "summary": "Exports data to various formats like: Excel xml, Excel xlsx, csv, tsv, html etc",
   "detailedDescription": "Utilities and plugins to export data in various formats and download them client-side",
   "type": "code",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stck/exporter.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "requires": [
     "core"
   ],
