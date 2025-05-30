@@ -31,8 +31,27 @@ Ext.define('Ext.exporter.File', {
      * Address of the server that supports file downloading. Check out the scripts
      * from the "server" folder of the `exporter` package if an in-house server
      * needs to be implemented.
+     *
+     * **Note:** Exporter Plugin's file transformation server https://exporter.sencha.com
+     * will be deprecated (turned down) in a future SDK release. Please implement your own server
+     * to provide support for older browsers that do not support file saving via blob. See
+     * {@link https://docs.sencha.com/extjs/latest/guides/components/exporter.html#components-_-exporter_-_file_saving}
+     * for more information. An example implementation can be seen inside the
+     * Exporter Package source: packages/exporter/server/node.
      */
-    url: 'https://exporter.sencha.com',
+    url: function() {
+        //<debug>
+        Ext.log.warn('Exporter Plugin\'s file transformation server https://exporter.sencha.com ' +
+            'will be deprecated (turned down) in a future SDK release. Please implement your ' +
+            'own server to provide support for older browsers that do not support file saving ' +
+            'via blob. See https://docs.sencha.com/extjs/latest/guides/components/exporter.' +
+            'html#components-_-exporter_-_file_saving for more information. An example ' +
+            'implementation can be seen inside the Exporter Package source: ' +
+            'packages/exporter/server/node.');
+        //</debug>
+
+        return 'https://exporter.sencha.com';
+    }(),
 
     /**
      * @property {Boolean} forceDownload

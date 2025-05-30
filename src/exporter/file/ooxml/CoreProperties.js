@@ -53,7 +53,7 @@ Ext.define('Ext.exporter.file.ooxml.CoreProperties', {
         '</coreProperties>',
         {
             utf8: function(v) {
-                return Ext.util.Base64._utf8_encode(v || '');
+                return Ext.util.Base64._utf8_encode(Ext.util.Format.htmlEncode(v) || '');
             }
         }
     ]

@@ -55,7 +55,7 @@ Ext.define('Ext.exporter.file.ooxml.excel.Stylesheet', {
     tpl: [
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',
         '<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">',
-        '<tpl if="numberFormats"><numFmts count="{numberFormats.length}"><tpl for="numberFormats.items">{[values.render()]}</tpl></numFmts></tpl>',
+        '<tpl if="numberFormats"><numFmts count="{numberFormats.length}"><tpl for="numberFormats.items">{[Ext.util.Base64._utf8_encode(values.render())]}</tpl></numFmts></tpl>',
         '<tpl if="fonts"><fonts count="{fonts.length}"><tpl for="fonts.items">{[values.render()]}</tpl></fonts></tpl>',
         '<tpl if="fills"><fills count="{fills.length}"><tpl for="fills.items">{[values.render()]}</tpl></fills></tpl>',
         '<tpl if="borders"><borders count="{borders.length}"><tpl for="borders.items">{[values.render()]}</tpl></borders></tpl>',
